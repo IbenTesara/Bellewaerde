@@ -1,0 +1,36 @@
+<div ng-controller="AttractionCTRL">
+   
+    
+   <div class="col-md-4" id="overflow">
+    <div ng-repeat="attraction in attractions" class="imagecard">
+        <div class="{{attraction.Type| lowercase}}"> <img class="icon" src="../images/icons/{{attraction.Type}}.png"></div>
+       <img ng-click="currentSelection($index)"  class="previewcard" src="../images/attractions/{{attraction.Image}}.png" alt="{{attraction.Name}}">
+       </div>
+    </div>
+    
+    
+        <div class="col-md-8">
+            <div class="detail">
+            <div class="preview">
+               <img src="../images/attractions/{{current.Image}}_crop.png" alt="{{current.Name}}">
+            
+            <h1>{{current.Name}}</h1>
+            </div>
+            
+            <div class="info">
+                <img class="icon" src="../images/icons/{{current.Type}}.png"> <h3>{{current.Type}}</h3>
+                
+                <p>{{current.Description}}</p>
+                
+                
+                <button>Toon op kaart</button>
+                <button>Delen</button>
+            
+            </div>
+            
+            </div>
+            
+        
+        </div>
+    
+</div>

@@ -1,0 +1,74 @@
+//Colours
+$darkgreen : #3a892f;
+$lightgreen : #55c847;
+$darkwhite: #e8e8e8;
+$lightwhite: #ffffff;
+$orange: #ffb652;
+$black : #545454;
+
+
+//Borders
+$border-bottom : 0.5em solid $lightgreen;
+$shadow : 1px 1px 1px rgba(0,0,0,0.25);
+
+//_________________________________________________________________________________________
+
+
+
+//Mixin
+
+@mixin white{
+    filter: brightness(0) invert(1) drop-shadow($shadow) ;
+}
+
+@mixin normal{
+    filter: drop-shadow($shadow);
+}
+
+
+//_________________________________________________________________________________________
+
+body{
+    background-color: $darkwhite;
+    min-height: 80%;
+    overflow-y: scroll;
+}
+
+header{
+    background-color: $darkgreen;
+    border-bottom: $border-bottom;
+    text-align: center;
+    padding-top: 2em;
+    top: 0;
+    
+    img{
+        height: 5em;
+        margin-bottom: 1em;
+    }
+}
+
+footer{
+    height: 0.5em;
+    bottom:0;
+    background-color: $lightgreen;
+}
+
+.buttonbar{
+    background-color: $orange;
+    text-align: center;
+    
+    img{
+       
+        height: 3em;
+        margin: 0.5em 1em 0.5em 1em;
+        
+        @include white;
+        &:hover{
+            @include normal;
+        }
+    }
+    
+}
+
+
+
